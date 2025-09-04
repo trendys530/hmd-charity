@@ -1,3 +1,80 @@
+// نظام ترجمة بسيط (i18n)
+const I18N = {
+    current: (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) || 'ar',
+    locales: {},
+};
+
+const setDirection = (lang) => {
+    const isRTL = lang === 'ar';
+    if (document && document.documentElement) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+    }
+};
+
+const t = (key) => {
+    const dict = I18N.locales[I18N.current] || {};
+    // دعم المفاتيح المتشعبة مثل a.b.c
+    return key.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined), dict);
+};
+
+const applyTranslations = (root = document) => {
+    if (!root) return;
+    const nodes = root.querySelectorAll('[data-i18n]');
+    nodes.forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        const val = t(key);
+        if (val !== undefined && val !== null) {
+            // إذا كان العنصر زر/رابط نحافظ على البنية
+            if ('textContent' in el) {
+                el.textContent = val;
+            }
+        }
+    });
+    // العنوان في <title data-i18n="...">
+    const titleEl = document.querySelector('head title[data-i18n]');
+    if (titleEl) {
+        const titleKey = titleEl.getAttribute('data-i18n');
+        const titleVal = t(titleKey);
+        if (titleVal) titleEl.textContent = titleVal;
+    }
+};
+
+const loadLocale = async (lang) => {
+    if (I18N.locales[lang]) {
+        I18N.current = lang;
+        setDirection(lang);
+        applyTranslations();
+        return;
+    }
+    try {
+        const res = await fetch(`locales/${lang}.json`, { cache: 'no-store' });
+        const json = await res.json();
+        I18N.locales[lang] = json;
+        I18N.current = lang;
+        setDirection(lang);
+        applyTranslations();
+    } catch (e) {
+        console.error('Failed to load locale', lang, e);
+    }
+};
+
+const switchLanguage = (lang) => {
+    if (!lang || I18N.current === lang) return;
+    try { localStorage.setItem('lang', lang); } catch (_) {}
+    loadLocale(lang);
+};
+
+const wireLangButtons = (root = document) => {
+    const buttons = root.querySelectorAll('.lang-btn[data-lang]');
+    buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            switchLanguage(lang);
+        });
+    });
+};
+
 // تفعيل القائمة المنسدلة للهواتف المحمولة
 const initMobileMenu = () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -104,6 +181,10 @@ const initNavLinkAnimations = () => {
 
 // تهيئة جميع الوظائف عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', function() {
+    // i18n: ضبط الاتجاه وتحميل اللغة الحالية
+    setDirection(I18N.current);
+    loadLocale(I18N.current);
+
     initMobileMenu();
     initSmoothScroll();
     initProgressBar();
@@ -199,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // إضافة تأثير التمرير لشريط التنقل
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
     if (window.scrollY > 50) {
         navbar.style.padding = '10px 0';
         navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
@@ -208,4 +290,10 @@ window.addEventListener('scroll', function() {
         navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
         navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
     }
+});
+
+// عند حقن الهيدر ديناميكياً، قم بربط أزرار اللغة وتطبيق الترجمة عليه
+document.addEventListener('header:loaded', () => {
+    wireLangButtons(document);
+    applyTranslations(document);
 });

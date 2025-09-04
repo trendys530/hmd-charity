@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "HMD Charity for Food Preservation"
+  },
+  "brand": {
+    "name": "HMD Charity",
+    "tagline": "For Food Preservation"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "achievements": "Achievements",
+    "contact": "Contact",
+    "donate": "Donate Now"
+  },
+  "hero": {
+    "title": "Preserving Blessings.. Creating Hope",
+    "subtitle": "HMD Charity acts as a bridge between surplus food and those in need",
+    "cta_donate": "Donate Now",
+    "cta_volunteer": "Become a Volunteer"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "A leading charity in preserving food and distributing it to those who deserve it",
+    "mission_title": "Our Mission",
+    "mission_text": "We strive to achieve food security by sustaining food resources and distributing them to the needy in a way that preserves their dignity.",
+    "read_more": "Read more"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "We provide an integrated set of services to preserve food",
+    "more": "More Services",
+    "item1": {
+      "title": "Collecting Surplus Food",
+      "text": "Collecting surplus from restaurants, hotels, and events"
+    },
+    "item2": {
+      "title": "Repackaging",
+      "text": "Rehabilitating and packaging food in a healthy and safe way"
+    },
+    "item3": {
+      "title": "Distributing Food Baskets",
+      "text": "Distributing food to needy families"
+    }
+  },
+  "achievements": {
+    "title": "Our Achievements",
+    "description": "We are proud of what we have achieved together",
+    "item1": "Meals Provided",
+    "item2": "Beneficiaries",
+    "item3": "Volunteers",
+    "item4": "Partners"
+  },
+  "volunteer": {
+    "title": "Be Part of Our Journey",
+    "text": "Help us deliver food to those in need and be part of our outstanding team",
+    "cta": "Register as a Volunteer"
+  }
+}
