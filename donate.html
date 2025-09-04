@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التبرع - جمعية حمد الأهلية لحفظ النعمة</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/donate.css">
+</head>
+<body>
+    <!-- تضمين الهيدر -->
+    <div id="header" class="fade-in"></div>
+
+    <!-- قسم البطل -->
+    <section class="donation-hero">
+        <div class="container">
+            <h1>ساهم معنا في إسعاد المحتاجين</h1>
+            <p>تبرعك يساعدنا على إيصال الطعام للمحتاجين وتقديم الدعم للأسر المتعففة</p>
+        </div>
+    </section>
+
+    <div class="donation-container">
+        <!-- خيارات التبرع -->
+        <section class="donation-options">
+            <div class="donation-option fade-in">
+                <i class="fas fa-utensils"></i>
+                <h3>سلة غذائية</h3>
+                <p>تكلفة سلة غذائية كاملة لمدة شهر</p>
+                <button class="btn btn-primary" data-amount="200">تبرع بـ 200 ريال</button>
+            </div>
+            <div class="donation-option fade-in delay-200">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>كفالة عائلة</h3>
+                <p>كفالة عائلة متعففة لمدة شهر</p>
+                <button class="btn btn-primary" data-amount="1000">تبرع بـ 1000 ريال</button>
+            </div>
+            <div class="donation-option fade-in delay-400">
+                <i class="fas fa-hands-helping"></i>
+                <h3>تبرع مفتوح</h3>
+                <p>اختر المبلغ الذي يناسبك</p>
+                <button class="btn btn-outline" id="customDonationBtn">تخصيص المبلغ</button>
+            </div>
+        </section>
+
+        <!-- نموذج التبرع -->
+        <section class="donation-form fade-in">
+            <h2 class="centered-title">نموذج التبرع</h2>
+            <form id="donationForm">
+                <div class="form-group">
+                    <label for="fullName">الاسم الكامل</label>
+                    <input type="text" id="fullName" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">رقم الجوال</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>مبلغ التبرع (ريال سعودي)</label>
+                    <div class="amount-options">
+                        <div class="amount-option" data-amount="50">50</div>
+                        <div class="amount-option" data-amount="100">100</div>
+                        <div class="amount-option" data-amount="200">200</div>
+                        <div class="amount-option" data-amount="500">500</div>
+                        <div class="amount-option" data-amount="1000">1000</div>
+                    </div>
+                    <div class="custom-amount">
+                        <input type="number" id="customAmount" class="form-control" placeholder="أدخل المبلغ المطلوب" min="1">
+                        <div class="currency">ر.س</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="donationType">نوع التبرع</label>
+                    <select id="donationType" class="form-control" required>
+                        <option value="">-- اختر نوع التبرع --</option>
+                        <option value="food">سلة غذائية</option>
+                        <option value="clothes">ملابس</option>
+                        <option value="money">تبرع نقدي</option>
+                        <option value="other">أخرى</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">رسالة (اختياري)</label>
+                    <textarea id="message" class="form-control" rows="4" placeholder="هل لديك رسالة خاصة؟"></textarea>
+                </div>
+
+                <button type="submit" class="btn-donate">تأكيد التبرع</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- تأثير التبرع -->
+    <section class="donation-impact">
+        <div class="container">
+            <h2>تأثير تبرعك</h2>
+            <p>كل ريال تتبرع به يساهم في إحداث فرق حقيقي في حياة المحتاجين</p>
+            
+            <div class="impact-items">
+                <div class="impact-item fade-in">
+                    <i class="fas fa-bread-slice"></i>
+                    <h4>وجبات غذائية</h4>
+                    <p>50 ريال توفر وجبة غذائية لأسرة لمدة أسبوع</p>
+                </div>
+                <div class="impact-item fade-in delay-200">
+                    <i class="fas fa-tshirt"></i>
+                    <h4>ملابس</h4>
+                    <p>200 ريال توفر ملابس لطفل محتاج</p>
+                </div>
+                <div class="impact-item fade-in delay-400">
+                    <i class="fas fa-home"></i>
+                    <h4>سكن</h4>
+                    <p>1000 ريال تساهم في توفير سكن لأسرة محتاجة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تضمين الفوتر -->
+    <div id="footer" class="fade-in"></div>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
+    <script>
+        // تحميل الهيدر والفوتر
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // تفعيل القائمة المتحركة للهواتف
+                const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                const nav = document.querySelector('.nav');
+                
+                if (mobileMenuBtn && nav) {
+                    mobileMenuBtn.addEventListener('click', function() {
+                        nav.classList.toggle('active');
+                        this.classList.toggle('active');
+                    });
+                }
+            });
+
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                initScrollAnimations();
+            });
+
+        // تفعيل تأثيرات التمرير
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // معالجة نموذج التبرع
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('donationForm');
+            const amountOptions = document.querySelectorAll('.amount-option');
+            const customAmountInput = document.getElementById('customAmount');
+            const customDonationBtn = document.getElementById('customDonationBtn');
+            let selectedAmount = 0;
+
+            // اختيار مبلغ من الأزرار
+            amountOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // إزالة التنشيط من جميع الأزرار
+                    amountOptions.forEach(opt => opt.classList.remove('active'));
+                    
+                    // تفعيل الزر المحدد
+                    this.classList.add('active');
+                    
+                    // تعيين المبلغ المحدد
+                    selectedAmount = parseInt(this.getAttribute('data-amount'));
+                    customAmountInput.value = '';
+                });
+            });
+
+            // إدخال مبلغ مخصص
+            customAmountInput.addEventListener('input', function() {
+                if (this.value) {
+                    amountOptions.forEach(opt => opt.classList.remove('active'));
+                    selectedAmount = parseInt(this.value) || 0;
+                }
+            });
+
+            // زر التبرع المخصص
+            customDonationBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                amountOptions.forEach(opt => opt.classList.remove('active'));
+                customAmountInput.value = '';
+                customAmountInput.focus();
+                selectedAmount = 0;
+            });
+
+            // أزرار التبرع السريع
+            document.querySelectorAll('.donation-option .btn').forEach(btn => {
+                if (btn.hasAttribute('data-amount')) {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const amount = this.getAttribute('data-amount');
+                        amountOptions.forEach(opt => opt.classList.remove('active'));
+                        customAmountInput.value = '';
+                        selectedAmount = parseInt(amount);
+                        
+                        // التمرير إلى نموذج التبرع
+                        form.scrollIntoView({ behavior: 'smooth' });
+                    });
+                }
+            });
+
+            // إرسال النموذج
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // التحقق من صحة المبلغ
+                const amount = customAmountInput.value ? parseInt(customAmountInput.value) : selectedAmount;
+                if (!amount || amount < 1) {
+                    alert('الرجاء إدخال مبلغ صحيح للتبرع');
+                    return;
+                }
+
+                // هنا يمكنك إضافة كود إرسال البيانات إلى الخادم
+                const formData = {
+                    name: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    amount: amount,
+                    type: document.getElementById('donationType').value,
+                    message: document.getElementById('message').value
+                };
+
+                console.log('بيانات التبرع:', formData);
+                
+                // عرض رسالة نجاح
+                alert(`شكراً لك على تبرعك البالغ ${amount} ريال. سنقوم بالتواصل معك قريباً.`);
+                form.reset();
+                amountOptions.forEach(opt => opt.classList.remove('active'));
+                selectedAmount = 0;
+            });
+        });
+    </script>
+</body>
+</html>

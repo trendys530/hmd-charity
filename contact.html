@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - جمعية حمد الأهلية لحفظ النعمة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/contact-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            margin-top: 80px;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(76, 175, 80, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-media {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-media a {
+            width: 40px;
+            height: 40px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-media a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .map-container {
+            margin: 60px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info, .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="شعار الجمعية">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="achievements.html">إنجازاتنا</a></li>
+                <li><a href="volunteer.html">تطوع معنا</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+                <li><a href="#" class="donate-btn">تبرع الآن</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم البطولي -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>اتصل بنا</h1>
+            <p>نحن هنا للإجابة على استفساراتك واقتراحاتك</p>
+        </div>
+    </section>
+
+    <!-- معلومات الاتصال والنموذج -->
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2 style="color: var(--primary-dark); margin-bottom: 30px;">معلومات التواصل</h2>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>العنوان</h4>
+                    <p>المملكة العربية السعودية، منطقة عسير، أحد رفيدة</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>هاتف</h4>
+                    <p><a href="tel:+966112345678">+966 11 234 5678</a></p>
+                    <p><a href="tel:+966501234567">+966 50 123 4567</a></p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>البريد الإلكتروني</h4>
+                    <p><a href="mailto:info@hammadah.org.sa">info@hammadah.org.sa</a></p>
+                    <p><a href="mailto:support@hammadah.org.sa">support@hammadah.org.sa</a></p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>ساعات العمل</h4>
+                    <p>السبت - الخميس: 8:00 صباحاً - 4:00 مساءً</p>
+                    <p>الجمعة: مغلق</p>
+                </div>
+            </div>
+            
+            <div class="social-media">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <h2 style="color: var(--primary-dark); margin-bottom: 30px;">أرسل لنا رسالة</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">رقم الجوال</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">الموضوع</label>
+                    <select id="subject" name="subject" class="form-control" required>
+                        <option value="">اختر الموضوع</option>
+                        <option value="استفسار">استفسار</option>
+                        <option value="مقترح">مقترح</option>
+                        <option value="شكوى">شكوى</option>
+                        <option value="تطوع">تطوع</option>
+                        <option value="تبرع">تبرع</option>
+                        <option value="أخرى">أخرى</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">الرسالة</label>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">إرسال الرسالة</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- خريطة الموقع -->
+    <div class="container">
+        <div class="map-container">
+            <iframe title="موقع جمعية حمد الأهلية على الخريطة" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.2345678901234!2d42.12345678901234!3d18.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDA3JzI0LjQiTiA0MsKwMDcnMjQuNCJF!5e0!3m2!1sen!2ssa!4v1234567890123!5m2!1sen!2ssa" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo-white.png" alt="شعار الجمعية" class="footer-logo">
+                    <p>جمعية حمد الأهلية لحفظ النعمة، نعمل من أجل تحقيق الأمن الغذائي المستدام</p>
+                </div>
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="achievements.html">إنجازاتنا</a></li>
+                        <li><a href="volunteer.html">تطوع معنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> المملكة العربية السعودية، أحد رفيدة</li>
+                        <li><i class="fas fa-phone"></i> 920000000</li>
+                        <li><i class="fas fa-envelope"></i> info@hammadah.org.sa</li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>النشرة البريدية</h4>
+                    <p>اشترك في نشرتنا البريدية لتصلك آخر أخبارنا</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <button type="submit">اشتراك</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 جميع الحقوق محفوظة لجمعية حمد الأهلية لحفظ النعمة</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-snapchat"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // معالجة إرسال النموذج
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // جمع بيانات النموذج
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // هنا يمكنك إضافة كود إرسال البيانات إلى الخادم
+            console.log('تم إرسال النموذج:', formData);
+            
+            // عرض رسالة نجاح
+            alert('شكراً لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.');
+            
+            // إعادة تعيين النموذج
+            this.reset();
+        });
+    </script>
+</body>
+</html>

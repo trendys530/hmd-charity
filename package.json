@@ -1,0 +1,38 @@
+{
+  "name": "hmd-charity",
+  "version": "1.0.0",
+  "description": "موقع جمعية حمد الأهلية لحفظ النعمة",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "^13.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    
+    "@vercel/static-build": "^1.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^13.4.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

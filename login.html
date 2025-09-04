@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - جمعية حمد الأهلية لحفظ النعمة</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-page">
+    <!-- تضمين الهيدر -->
+    <div id="header"></div>
+
+    <!-- قسم تسجيل الدخول -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-image">
+                    <img src="images/auth-bg.jpg" alt="صفحة تسجيل الدخول">
+                    <div class="auth-overlay">
+                        <h2>مرحباً بعودتك!</h2>
+                        <p>سجل دخولك للوصول إلى حسابك والاستفادة من كافة خدماتنا</p>
+                        <a href="register.html" class="btn btn-outline">إنشاء حساب جديد</a>
+                    </div>
+                </div>
+                <div class="auth-form-container">
+                    <div class="auth-header">
+                        <h1>تسجيل الدخول</h1>
+                        <p>الرجاء إدخال بيانات الاعتماد الخاصة بك للمتابعة</p>
+                    </div>
+                    
+                    <form id="loginForm" class="auth-form" action="php/login.php" method="POST">
+                        <div class="form-group">
+                            <label for="username">اسم المستخدم أو البريد الإلكتروني</label>
+                            <div class="input-group">
+                                <span class="input-icon"><i class="fas fa-user"></i></span>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <label for="password">كلمة المرور</label>
+                                <a href="forgot-password.html" class="forgot-password">نسيت كلمة المرور؟</a>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-icon"><i class="fas fa-lock"></i></span>
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" class="toggle-password" aria-label="إظهار/إخفاء كلمة المرور">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group remember-me">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">تذكرني</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">تسجيل الدخول</button>
+                        
+                        <div class="auth-divider">
+                            <span>أو</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <p>تسجيل الدخول باستخدام</p>
+                            <div class="social-buttons">
+                                <a href="#" class="btn btn-social btn-google">
+                                    <i class="fab fa-google"></i> جوجل
+                                </a>
+                                <a href="#" class="btn btn-social btn-twitter">
+                                    <i class="fab fa-twitter"></i> تويتر
+                                </a>
+                                <a href="#" class="btn btn-social btn-facebook">
+                                    <i class="fab fa-facebook-f"></i> فيسبوك
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <p class="auth-footer">ليس لديك حساب؟ <a href="register.html">إنشاء حساب جديد</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تضمين الفوتر -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script>
+        // تحميل الهيدر
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // تفعيل القائمة المتحركة للهواتف
+                const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                const nav = document.querySelector('.nav');
+                
+                if (mobileMenuBtn && nav) {
+                    mobileMenuBtn.addEventListener('click', function() {
+                        nav.classList.toggle('active');
+                        this.classList.toggle('active');
+                        document.body.classList.toggle('no-scroll');
+                    });
+                }
+                
+                // إضافة كلاس active للرابط الحالي
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPage) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+        // تحميل الفوتر
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+            
+        // تفعيل تأثيرات التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            // إظهار/إخفاء كلمة المرور
+            const togglePassword = document.querySelector('.toggle-password');
+            const password = document.getElementById('password');
+            
+            if (togglePassword && password) {
+                togglePassword.addEventListener('click', function() {
+                    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                    password.setAttribute('type', type);
+                    this.querySelector('i').classList.toggle('fa-eye');
+                    this.querySelector('i').classList.toggle('fa-eye-slash');
+                });
+            }
+            
+            // التحقق من صحة النموذج قبل الإرسال
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // هنا يمكنك إضافة التحقق من صحة البيانات
+                    // وإرسال الطلب إلى الخادم
+                    this.submit();
+                });
+            }
+            
+            // تأثيرات الحركة
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

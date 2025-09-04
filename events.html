@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فعاليات الجمعية - جمعية حمد الأهلية لحفظ النعمة</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <!-- تضمين الهيدر -->
+    <div id="header"></div>
+
+    <!-- قسم البطاقة الرئيسية للفعاليات -->
+    <section class="events-hero">
+        <div class="container">
+            <h1 class="fade-in">فعاليات الجمعية</h1>
+            <p class="fade-in">تعرف على فعالياتنا القادمة والمناسبات الهامة</p>
+        </div>
+    </section>
+
+    <!-- قسم الفعاليات القادمة -->
+    <section class="upcoming-events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="fade-in">الفعاليات القادمة</h2>
+                <p class="fade-in">انضم إلينا في فعالياتنا القادمة وساهم معنا في خدمة المجتمع</p>
+            </div>
+
+            <div class="events-filter fade-in">
+                <div class="filter-group">
+                    <label for="event-category">تصفية حسب النوع:</label>
+                    <select id="event-category" class="filter-select">
+                        <option value="all">جميع الفعاليات</option>
+                        <option value="volunteer">تطوع</option>
+                        <option value="training">تدريب</option>
+                        <option value="awareness">توعية</option>
+                        <option value="fundraising">جمع تبرعات</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="event-date">تصفية حسب التاريخ:</label>
+                    <input type="text" id="event-date" class="filter-select date-picker" placeholder="اختر التاريخ">
+                </div>
+            </div>
+
+            <div class="events-grid">
+                <!-- فعالية 1 -->
+                <article class="event-card fade-in" data-category="volunteer" data-date="2025-09-15">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">سبتمبر</span>
+                    </div>
+                    <div class="event-image">
+                        <img src="images/event-1.jpg" alt="صورة الفعالية">
+                        <span class="event-category volunteer">تطوع</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 4:00 مساءً - 8:00 مساءً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> مقر الجمعية الرئيسي</span>
+                        </div>
+                        <h3>يوم التطوع السنوي</h3>
+                        <p>انضم إلينا في يوم التطوع السنوي حيث سنقوم بتوزيع الوجبات الغذائية على الأسر المحتاجة في مختلف أحياء المدينة.</p>
+                        <div class="event-footer">
+                            <span class="event-spots"><i class="fas fa-users"></i> 25 متطوع متبقي</span>
+                            <a href="#register-modal" class="btn btn-primary btn-sm event-register">سجل الآن</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- فعالية 2 -->
+                <article class="event-card fade-in" data-category="training" data-date="2025-09-20">
+                    <div class="event-date">
+                        <span class="day">20</span>
+                        <span class="month">سبتمبر</span>
+                    </div>
+                    <div class="event-image">
+                        <img src="images/event-2.jpg" alt="صورة الفعالية">
+                        <span class="event-category training">تدريب</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 5:00 مساءً - 9:00 مساءً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> قاعة المؤتمرات - فرع الشمال</span>
+                        </div>
+                        <h3>دورة إدارة المشاريع التطوعية</h3>
+                        <p>دورة تدريبية متخصصة في إدارة وتنظيم المشاريع التطوعية للمتطوعين الراغبين في تطوير مهاراتهم القيادية.</p>
+                        <div class="event-footer">
+                            <span class="event-spots"><i class="fas fa-users"></i> 15 مقعد متبقي</span>
+                            <a href="#register-modal" class="btn btn-primary btn-sm event-register">سجل الآن</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- فعالية 3 -->
+                <article class="event-card fade-in" data-category="awareness" data-date="2025-09-25">
+                    <div class="event-date">
+                        <span class="day">25</span>
+                        <span class="month">سبتمبر</span>
+                    </div>
+                    <div class="event-image">
+                        <img src="images/event-3.jpg" alt="صورة الفعالية">
+                        <span class="event-category awareness">توعية</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 6:00 مساءً - 8:00 مساءً</span>
+                            <span><i class="fas fa-map-marker-alt"></i> المركز الثقافي - وسط المدينة</span>
+                        </div>
+                        <h3>محاضرة عن أهمية حفظ النعمة</h3>
+                        <p>محاضرة توعوية تهدف إلى نشر ثقافة حفظ النعمة وترشيد الاستهلاك في المجتمع.</p>
+                        <div class="event-footer">
+                            <span class="event-spots"><i class="fas fa-users"></i> 40 مقعد متبقي</span>
+                            <a href="#register-modal" class="btn btn-primary btn-sm event-register">سجل الآن</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم تقويم الفعاليات -->
+    <section class="events-calendar">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="fade-in">تقويم الفعاليات</h2>
+                <p class="fade-in">تصفح فعالياتنا الشهرية وانضم إلينا في أنشطتنا</p>
+            </div>
+
+            <div class="calendar-container fade-in">
+                <div class="calendar-header">
+                    <button id="prev-month" class="calendar-nav" aria-label="الشهر السابق" title="الشهر السابق"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                    <h3 id="current-month-year">سبتمبر 2025</h3>
+                    <button id="next-month" class="calendar-nav" aria-label="الشهر التالي" title="الشهر التالي"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                </div>
+                <div id="calendar" class="calendar">
+                    <!-- سيتم ملء التقويم بالجافاسكريبت -->
+                </div>
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <span class="legend-color volunteer"></span>
+                        <span>تطوع</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color training"></span>
+                        <span>تدريب</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color awareness"></span>
+                        <span>توعية</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color fundraising"></span>
+                        <span>جمع تبرعات</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الفعاليات السابقة -->
+    <section class="past-events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="fade-in">الفعاليات السابقة</h2>
+                <p class="fade-in">استعرض فعالياتنا السابقة وإنجازاتنا</p>
+            </div>
+
+            <div class="past-events-slider fade-in">
+                <div class="past-event-slide">
+                    <div class="past-event-card">
+                        <div class="past-event-image">
+                            <img src="images/past-event-1.jpg" alt="صورة الفعالية السابقة">
+                            <div class="past-event-date">10 أغسطس 2025</div>
+                        </div>
+                        <div class="past-event-content">
+                            <h3>حملة توزيع السلال الرمضانية</h3>
+                            <p>تم توزيع أكثر من 1000 سلة غذائية على الأسر المحتاجة في مختلف أحياء المدينة خلال شهر رمضان المبارك.</p>
+                            <a href="#" class="btn btn-outline">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="past-event-slide">
+                    <div class="past-event-card">
+                        <div class="past-event-image">
+                            <img src="images/past-event-2.jpg" alt="صورة الفعالية السابقة">
+                            <div class="past-event-date">15 يوليو 2025</div>
+                        </div>
+                        <div class="past-event-content">
+                            <h3>معرض حفظ النعمة</h3>
+                            <p>إقامة معرض توعوي عن أهمية حفظ النعمة وترشيد الاستهلاك في المركز التجاري الكبير.</p>
+                            <a href="#" class="btn btn-outline">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="past-event-slide">
+                    <div class="past-event-card">
+                        <div class="past-event-image">
+                            <img src="images/past-event-3.jpg" alt="صورة الفعالية السابقة">
+                            <div class="past-event-date">20 يونيو 2025</div>
+                        </div>
+                        <div class="past-event-content">
+                            <h3>حملة تنظيف الشواطئ</h3>
+                            <p>مشاركة أكثر من 50 متطوع في حملة لتنظيف الشواطئ والحفاظ على البيئة البحرية.</p>
+                            <a href="#" class="btn btn-outline">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نموذج التسجيل في الفعالية -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>تسجيل في الفعالية</h3>
+                <a href="#" class="modal-close">&times;</a>
+            </div>
+            <div class="modal-body">
+                <form id="event-registration-form">
+                    <div class="form-group">
+                        <label for="full-name">الاسم الكامل</label>
+                        <input type="text" id="full-name" name="full-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الجوال</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-name">اسم الفعالية</label>
+                        <input type="text" id="event-name" name="event-name" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="event-date-modal">تاريخ الفعالية</label>
+                        <input type="text" id="event-date-modal" name="event-date" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">ملاحظات إضافية (اختياري)</label>
+                        <textarea id="notes" name="notes" rows="3"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">تأكيد التسجيل</button>
+                        <a href="#" class="btn btn-outline modal-close">إلغاء</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- تضمين الفوتر -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // تحميل الهيدر
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                // تفعيل القائمة المتحركة للهواتف
+                const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                const nav = document.querySelector('.nav');
+                
+                if (mobileMenuBtn && nav) {
+                    mobileMenuBtn.addEventListener('click', function() {
+                        nav.classList.toggle('active');
+                        this.classList.toggle('active');
+                        document.body.classList.toggle('no-scroll');
+                    });
+                }
+                
+                // إضافة كلاس active للرابط الحالي
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === 'events.html') {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+        // تحميل الفوتر
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+            
+        // تفعيل تأثيرات التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // تفعيل اختيار التاريخ
+            flatpickr(".date-picker", {
+                locale: "ar",
+                dateFormat: "Y-m-d",
+                minDate: "today",
+                onChange: function(selectedDates, dateStr, instance) {
+                    filterEvents();
+                }
+            });
+
+            // تفعيل السلايدر للفعاليات السابقة
+            $('.past-events-slider').slick({
+                rtl: true,
+                dots: true,
+                arrows: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            // تصفية الفعاليات
+            function filterEvents() {
+                const category = document.getElementById('event-category').value;
+                const date = document.getElementById('event-date').value;
+                
+                document.querySelectorAll('.event-card').forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const cardDate = card.getAttribute('data-date');
+                    let show = true;
+                    
+                    if (category !== 'all' && cardCategory !== category) {
+                        show = false;
+                    }
+                    
+                    if (date && cardDate !== date) {
+                        show = false;
+                    }
+                    
+                    if (show) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            
+            document.getElementById('event-category').addEventListener('change', filterEvents);
+            
+            // تفعيل نموذج التسجيل
+            const modal = document.getElementById('register-modal');
+            const modalClose = document.querySelectorAll('.modal-close');
+            const eventRegisterBtns = document.querySelectorAll('.event-register');
+            
+            eventRegisterBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const eventCard = this.closest('.event-card');
+                    const eventName = eventCard.querySelector('h3').textContent;
+                    const eventDate = eventCard.querySelector('.event-date .day').textContent + ' ' + 
+                                    eventCard.querySelector('.event-date .month').textContent;
+                    
+                    document.getElementById('event-name').value = eventName;
+                    document.getElementById('event-date-modal').value = eventDate;
+                    
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            modalClose.forEach(closeBtn => {
+                closeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // تفعيل نموذج التسجيل
+            document.getElementById('event-registration-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // هنا يمكنك إضافة كود إرسال النموذج
+                alert('تم استلام طلبك بنجاح! سنتواصل معك قريباً.');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                this.reset();
+            });
+            
+            // تفعيل التقويم
+            function generateCalendar() {
+                const calendar = document.getElementById('calendar');
+                const currentDate = new Date();
+                const currentMonth = currentDate.getMonth();
+                const currentYear = currentDate.getFullYear();
+                const monthNames = [
+                    'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
+                    'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'
+                ];
+                
+                // تحديث عنوان الشهر والسنة
+                document.getElementById('current-month-year').textContent = 
+                    `${monthNames[currentMonth]} ${currentYear}`;
+                
+                // إنشاء أيام الأسبوع
+                const weekdays = ['أحد', 'إثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'];
+                let calendarHTML = '<div class="calendar-weekdays">';
+                
+                weekdays.forEach(day => {
+                    calendarHTML += `<div class="calendar-weekday">${day}</div>`;
+                });
+                
+                calendarHTML += '</div><div class="calendar-days">';
+                
+                // حساب عدد الأيام في الشهر
+                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+                // حساب أول يوم في الشهر (0 = الأحد، 1 = الإثنين، ...)
+                const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+                
+                // إضافة خلايا فارغة لأيام الأسبوع قبل أول يوم في الشهر
+                for (let i = 0; i < firstDayOfMonth; i++) {
+                    calendarHTML += '<div class="calendar-day empty"></div>';
+                }
+                
+                // إضافة أيام الشهر
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const hasEvent = Math.random() > 0.8; // لمحاكاة وجود فعاليات
+                    const eventType = hasEvent ? ['volunteer', 'training', 'awareness', 'fundraising'][Math.floor(Math.random() * 4)] : '';
+                    
+                    calendarHTML += `
+                        <div class="calendar-day ${hasEvent ? 'has-event ' + eventType : ''}" data-date="${dateStr}">
+                            ${day}
+                            ${hasEvent ? '<span class="event-dot"></span>' : ''}
+                        </div>
+                    `;
+                }
+                
+                calendarHTML += '</div>';
+                calendar.innerHTML = calendarHTML;
+                
+                // إضافة مستمعات الأحداث لأيام التقويم
+                document.querySelectorAll('.calendar-day:not(.empty)').forEach(day => {
+                    day.addEventListener('click', function() {
+                        const date = this.getAttribute('data-date');
+                        if (date) {
+                            document.getElementById('event-date').value = date;
+                            filterEvents();
+                        }
+                    });
+                });
+            }
+            
+            // تفعيل أزرار التنقل بين الأشهر
+            document.getElementById('prev-month').addEventListener('click', function() {
+                // تنفيذ التنقل للشهر السابق
+                alert('سيتم تنفيذ التنقل للشهر السابق');
+            });
+            
+            document.getElementById('next-month').addEventListener('click', function() {
+                // تنفيذ التنقل للشهر التالي
+                alert('سيتم تنفيذ التنقل للشهر التالي');
+            });
+            
+            // توليد التقويم عند تحميل الصفحة
+            generateCalendar();
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
